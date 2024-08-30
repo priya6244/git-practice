@@ -7,5 +7,5 @@ echo "1st dryfruit is : ${Dry_fruits[$0]}"
 echo "2nd dryfruit is : ${Dry_fruits[$1]}"
 
 echo "4th dryfruit is : ${Dry_fruits[$3]}"
-
+echo " total no of fruits : ${NO_OF_FRUITS[$#]}
 #echo "all dryfruits are : ${Dry_fruits[@]}"

@@ -1,12 +1,5 @@
 #!/bin/bash
 
-
-LOG_FOLDER="/var/log/shell-script"
-SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-TIME=$(date +%Y-%m-%d-%H-%M-%S)
-LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIME.log"
-mkdir -p $LOG_FOLDER
-
 USERID=$(id -u)
 
 R="\e[31m"
@@ -16,22 +9,22 @@ N="\e[0m"
 VALIDATE(){
     if [ $? != 0 ]
     then
-        echo -e "$R $PACKAGE is not installed, going to install it.. $N" &>> LOG_FILE
+        echo -e "$R $PACKAGE is not installed, going to install it.. $N"
         dnf install $PACKAGE -y
     else
-        echo -e "$G $PACKAGE is already Installed, nothing to do.. $N" &>> LOG_FILE
+        echo -e "$G $PACKAGE is already Installed, nothing to do.. $N"
         dnf install $PACKAGE -y
     fi   
 }
 
 USAGE(){
-    echo -e "$R It should be like sh 15-redirectors.sh package1 package2 .. $N " &>> LOG_FILE
+    echo -e "$R It should be like sh 15-redirectors.sh package1 package2 .. $N "
     exit 1
 }
 
 if [ $USERID != 0 ]
 then
-    echo -e "$R Please run this script with root privileges $N" &>> LOG_FILE
+    echo -e "$R Please run this script with root privileges $N"
     exit 1
 fi
 

@@ -2,7 +2,7 @@
 
 Dry_fruits=("Almonds" "Walnuts" "Raisins" "Anjeer")
 # #NO_OF_FRUITS=$#
-
+# index starts from 0, and size of array is 3
 echo "1st dryfruit is : ${Dry_fruits[0]}"
 echo "2nd dryfruit is : ${Dry_fruits[1]}"
 

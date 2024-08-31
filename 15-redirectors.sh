@@ -39,7 +39,7 @@ then
     USAGE
 fi
 
-VALIDATE $? "Installing $PACKAGE"
+#VALIDATE $? "Installing $PACKAGE"
 
 for PACKAGE in $@ # 1st time git
 do

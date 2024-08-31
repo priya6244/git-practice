@@ -37,6 +37,7 @@ fi
 if [ $# == 0 ]
 then
     USAGE
+    exit 1
 fi
 
 #VALIDATE $? "Installing $PACKAGE"

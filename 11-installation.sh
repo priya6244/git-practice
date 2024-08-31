@@ -19,14 +19,21 @@ fi
 #PACKAGE=$1
 
 #dnf install git -y
-dnf list installed git
+dnf list installed gittt
 
 if [ $? == 0 ]
 then
     echo "Already Installed"
 else
     echo "Not yet installed, Going to install it.."
-    dnf Install git -y
+    dnf Install gittt -y
+    if [ $? == 0 ]
+    then
+        echo "Installation is successful"
+    else
+        echo "Not successful, pls check"
+        exit 1
+    fi   
 fi
 
 #dnf status $PACKAGE -y

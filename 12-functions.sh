@@ -13,7 +13,7 @@ VALIDATE(){
     then
         echo -e "$R Not yet installed, Going to install it.."
     else
-        echo "$G Installed"
+        echo -e "$G Installed"
     fi
     
 }
@@ -24,7 +24,7 @@ then
     exit 1
 fi
 
-dnf list installed gittt
+dnf list installed git
 
 VALIDATE $?
 

@@ -7,9 +7,9 @@
 #     echo "$i"
 # done
 
-# for PACKAGE in $@
-# do
-#     echo $@
-# done
+for PACKAGE in $@
+do
+    echo $@
+done
 
-echo " $0 | cut -d "." -f1 "
+#echo " $0 | cut -d "." -f1 "

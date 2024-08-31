@@ -23,21 +23,18 @@ then
     exit 1
 fi
 
-dnf list installed git
-
 VALIDATE $?
 
-# if [ $? != 0 ]
-# then
-#     echo "Not yet installed, Going to install it.."
-#     dnf install mysql -y
-#     if [ $? != 0 ]
-#     then
-#         echo "Not successful, pls check"
-#         exit 1    
-#     else
-#         echo "Installation is successful"
-#     fi
-# else
-#     echo "Already Installed"  
-# fi
+for PACKAGE in $@
+do
+    dnf list installed $PACKAGE
+    if [ $? != 0 ]
+    then
+        echo "$PACKAGE is noyt installed, going to install it"
+        dnf install $PACKAGE -y
+        VALIDATE $? "Installing $PACKAGE
+    else
+        echo "$PACKAGE is already installed"
+    dnf install $PACKAGE -y
+
+done

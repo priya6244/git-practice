@@ -16,10 +16,10 @@ N="\e[0m"
 VALIDATE(){
     if [ $? != 0 ]
     then
-        echo -e "$R $PACKAGE is not installed, going to install it.. $N" &>> $LOG_FILE
+        echo -e "$R $PACKAGE is not installed, going to install it.. $N" | tee -a $LOG_FILE
         dnf install $PACKAGE -y
     else
-        echo -e "$G $PACKAGE is already Installed, nothing to do.. $N" &>> $LOG_FILE
+        echo -e "$G $PACKAGE is already Installed, nothing to do.. $N" | tee -a $LOG_FILE
     fi   
 }
 
@@ -47,6 +47,6 @@ for PACKAGE in $@ # 1st time git
 do
     dnf list installed $PACKAGE # git installed, exit status 0 
     
-    VALIDATE $? "Installing $PACKAGE" &>> $LOG_FILE
+    VALIDATE $? "Installing $PACKAGE" | tee -a $LOG_FILE
     
 done

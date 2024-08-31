@@ -26,7 +26,7 @@ then
     echo "Already Installed"
 else
     echo "Not yet installed, Going to install it.."
-    dnf Install mysql -y
+    dnf install mysql -y
     if [ $? == 0 ]
     then
         echo "Installation is successful"

@@ -16,3 +16,5 @@ then
     echo "Please run this script with root privileges"
     exit 1
 fi
+
+dnf install git -y

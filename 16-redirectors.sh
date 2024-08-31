@@ -5,7 +5,7 @@ LOG_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 TIME=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIME.log"
-mkdir -p $LOG_FOLDER
+#mkdir -p $LOG_FOLDER
 
 USERID=$(id -u)
 
@@ -16,10 +16,10 @@ N="\e[0m"
 VALIDATE(){
     if [ $? != 0 ]
     then
-        echo -e "$R $PACKAGE is not installed, going to install it.. $N" | tee -a $LOG_FILE
+        echo -e "$R $PACKAGE is not installed, going to install it.. $N" 
         dnf install $PACKAGE -y
     else
-        echo -e "$G $PACKAGE is already Installed, nothing to do.. $N" | tee -a $LOG_FILE
+        echo -e "$G $PACKAGE is already Installed, nothing to do.. $N" 
     fi   
 }
 
@@ -47,6 +47,6 @@ for PACKAGE in $@ # 1st time git
 do
     dnf list installed $PACKAGE # git installed, exit status 0 
     
-    VALIDATE $? "Installing $PACKAGE" | tee -a $LOG_FILE
+    VALIDATE $? "Installing $PACKAGE"
     
 done

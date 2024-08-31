@@ -19,7 +19,7 @@ VALIDATE(){
         echo -e "$R $PACKAGE is not installed, going to install it.. $N"
         dnf install $PACKAGE -y
     else
-        echo -e "$G $PACKAGE is already Installed, nothing to do.. $N"
+        echo -e "$G $PACKAGE1 is already Installed, nothing to do.. $N"
     fi   
 }
 

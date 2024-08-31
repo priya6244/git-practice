@@ -11,7 +11,7 @@ echo "user id is: $USERID"
 VALIDATE(){
     if [ $1 != 0 ]
     then
-        echo "$R Not yet installed, Going to install it.."
+        echo -e "$R Not yet installed, Going to install it.."
     else
         echo "$G Installed"
     fi

@@ -14,12 +14,12 @@ G="\e[32m"
 N="\e[0m"
 
 VALIDATE(){
-    if [ $1 != 0 ]
+    if [ $? != 0 ]
     then
         echo -e "$R $PACKAGE is not installed, going to install it.. $N"
         dnf install $PACKAGE -y
     else
-        echo -e "$G $1 is already Installed, nothing to do.. $N"
+        echo -e "$G $PACKAGE is already Installed, nothing to do.. $N"
     fi   
 }
 

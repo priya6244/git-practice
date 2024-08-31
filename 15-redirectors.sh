@@ -23,10 +23,19 @@ VALIDATE(){
     fi   
 }
 
+USAGE(){
+    echo -e "$R It should be like sh 15-redirectors.sh package1 package2 .. $N "
+}
+
 if [ $USERID != 0 ]
 then
     echo -e "$R Please run this script with root privileges $N"
     exit 1
+fi
+
+if [ $# == 0 ]
+then
+    USAGE
 fi
 
 VALIDATE $? "Installing $PACKAGE"

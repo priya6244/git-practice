@@ -19,14 +19,14 @@ fi
 #PACKAGE=$1
 
 #dnf install git -y
-dnf list installed gittt
+dnf list installed mysql
 
 if [ $? == 0 ]
 then
     echo "Already Installed"
 else
     echo "Not yet installed, Going to install it.."
-    dnf Install gittt -y
+    dnf Install mysql -y
     if [ $? == 0 ]
     then
         echo "Installation is successful"

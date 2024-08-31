@@ -30,7 +30,7 @@ USAGE(){
 
 if [ $USERID != 0 ]
 then
-    echo -e "$R Please run this script with root privileges $N" &>> $LOG_FILE
+    echo -e "$R Please run this script with root privileges $N"
     exit 1
 fi
 
@@ -45,8 +45,8 @@ fi
 
 for PACKAGE in $@ # 1st time git
 do
-    dnf list installed $PACKAGE # git installed, exit status 0
+    dnf list installed $PACKAGE # git installed, exit status 0 
     
-    VALIDATE $? "Installing $PACKAGE"
+    VALIDATE $? "Installing $PACKAGE" &>> $LOG_FILE
     
 done

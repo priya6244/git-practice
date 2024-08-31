@@ -2,14 +2,18 @@
 
 USERID=$(id -u)
 
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+
 echo "user id is: $USERID"
 
 VALIDATE(){
     if [ $1 != 0 ]
     then
-        echo "Not yet installed, Going to install it.."
+        echo "$R Not yet installed, Going to install it.."
     else
-        echo "Installed"
+        echo "$G Installed"
     fi
     
 }

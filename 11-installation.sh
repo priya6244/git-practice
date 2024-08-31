@@ -17,4 +17,10 @@ then
     exit 1
 fi
 
-dnf install git -y
+#dnf install git -y
+dnf list installed git
+
+if [ $? == 0 ]
+then
+    echo "Installed"
+fi

@@ -6,7 +6,13 @@ echo "user id is: $USERID"
 
 # if [ $USERID == 0 ]
 # then
-#     echo "root user" #root user
+#     echo "root user"
 # else
 #     echo "you are not the root user"
 # fi
+
+if [ $USERID != 0 ]
+then
+    echo "Please run this script with root privileges"
+    exit 1
+fi

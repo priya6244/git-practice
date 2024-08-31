@@ -24,7 +24,7 @@ VALIDATE(){
 }
 
 USAGE(){
-    echo -e "$R It should be like sh 15-redirectors.sh package1 package2 .. $N " &>> $LOG_FILE
+    echo -e "$R It should be like sh 15-redirectors.sh package1 package2 .. $N "
     exit 1
 }
 

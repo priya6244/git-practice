@@ -16,21 +16,21 @@ then
     echo "Please run this script with root privileges"
     exit 1
 fi
-PACKAGE=$1
+#PACKAGE=$1
 
 #dnf install git -y
-dnf list installed $PACKAGE
+dnf list installed git
 
 if [ $? == 0 ]
 then
     echo "Already Installed"
 else
     echo "Not yet installed, Going to install it.."
-    dnf Install $PACKAGE -y
+    dnf Install git -y
 fi
 
-dnf status $PACKAGE -y
-dnf enable $PACKAGE -y
+#dnf status $PACKAGE -y
+#dnf enable $PACKAGE -y
 
 # dnf list installed git
 

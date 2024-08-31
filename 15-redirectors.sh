@@ -13,7 +13,6 @@ VALIDATE(){
         dnf install $PACKAGE -y
     else
         echo -e "$G $PACKAGE is already Installed, nothing to do.. $N"
-        dnf install $PACKAGE -y
     fi   
 }
 

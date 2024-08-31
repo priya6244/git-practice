@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [ $(id -u) == 0 ]
+USERID=$(id -u)
+
+if [ $USERID == 0 ]
 then
     echo "root user"
 else

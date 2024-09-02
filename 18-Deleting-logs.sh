@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$SOURCE_DIR="home/ec2-user/files"
+$SOURCE_DIR="/home/ec2-user/files"
 
 if [ -d $SOURCE_DIR ]
 then

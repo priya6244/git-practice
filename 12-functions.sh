@@ -11,8 +11,8 @@ echo "user id is: $USERID"
 VALIDATE(){
     if [ $1 != 0 ]
     then
-        echo -e "$R $2  Not yet installed, Going to install it.. $N"
-        dnf install $2 -y
+        echo -e "$R Not yet installed, Going to install it.. $N"
+        dnf install nginx -y
     else
         echo -e "$G Already Installed $N"
     fi  

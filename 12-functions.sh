@@ -5,22 +5,23 @@ USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
+Y="\e[33m"
 
 echo "user id is: $USERID"
 
 if [ $USERID != 0 ]
 then
-    echo "Please run this script with root privileges"
+    echo "$R Please run this script with root privileges $N"
     exit 1
 fi
 
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "$2 is...FAILED"
+        echo " $R $2 is...FAILED $N"
         exit 1
     else
-        echo "$2 is...SUCCESS"
+        echo " $G $2 is...SUCCESS $N"
     fi
 }
 
@@ -28,22 +29,22 @@ dnf list installed nginx
 
 if [ $? -ne 0 ]
 then
-    echo "Nginx is not installed, going to install it.."
+    echo "$Y Nginx is not installed, going to install it..$N"
     dnf install nginx -y
     VALIDATE $? "Installing Nginx"
 else
-    echo "Nginx is already installed, nothing to do.."
+    echo "$G Nginx is already installed $N, nothing to do.."
 fi
 
 dnf list installed mysql
 
 if [ $? -ne 0 ]
 then
-    echo "MySQL is not installed...going to install"
+    echo "$Y MySQL is not installed...going to install $N"
     dnf install mysql -y
     VALIDATE $? "Installing MySQL"
 else
-    echo "MySQL is already installed..nothing to do"
+    echo "$G MySQL is already installed$N,nothing to do"
 fi
 
 # VALIDATE(){

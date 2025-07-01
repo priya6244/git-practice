@@ -46,7 +46,7 @@ then
     echo "Already Installed"
 else
     echo "Not yet installed, Going to install it.."
-    dnf Install nginx -y
+    dnf install nginx -y
     if [ $? -eq 0 ]
     then
         echo "nginx Installation is success"

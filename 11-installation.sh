@@ -19,19 +19,19 @@ fi
 #PACKAGE=$1
 
 #dnf install git -y
-dnf list installed mysqll #lists the mysql if it is already installed
+dnf list installed mysql #lists the mysql if it is already installed
 
 if [ $? == 0 ]           # $? gives the exit status of the previous command, here it gives the exit status of the dnf list installed mysql command
 then
     echo "Already Installed"   # print this if S? == 0, means success -> mysql already installed
 else
     echo "Not yet installed, Going to install it.." # print this if S? != 0, means failure -> mysql not installed yet
-    dnf install mysqll -y       # install mysql
+    dnf install mysql -y       # install mysql
     if [ $? == 0 ]        # $? gives the exit status of the previous command, here it gives the exit status of the dnf install mysql command
     then
-        echo "Installation is successful" # print this if $? = 0, means success
+        echo "Mysql Installation is successful" # print this if $? = 0, means success
     else
-        echo "Not successful, pls check"  # print this if $? != 0, means failure
+        echo "Mysql Instllation is not successful, please check"  # print this if $? != 0, means failure
         exit 1
     fi   
 fi
@@ -39,12 +39,19 @@ fi
 #dnf status $PACKAGE -y
 #dnf enable $PACKAGE -y
 
-# dnf list installed git
+dnf list installed httpd
 
-# if [ $? == 0 ]
-# then
-#     echo "Already Installed"
-# else
-#     echo "Not yet installed, Going to install it.."
-#     dnf Install mysql -y
-# fi
+if [ $? == 0 ]
+then
+    echo "Already Installed"
+else
+    echo "Not yet installed, Going to install it.."
+    dnf Install httpd -y
+    if [ $? -eq 0 ]
+    then
+        echo "httpd Installation is success"
+    else
+        echo "httpd Installation is failure, please check"
+    exit 1
+    fi
+fi

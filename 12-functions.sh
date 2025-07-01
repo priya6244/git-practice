@@ -2,9 +2,9 @@
 
 USERID=$(id -u)
 
-R="\e[31m"
+R=\e[31m
 G="\e[32m"
-N="\e[0m"
+N=\e[0m
 Y="\e[33m"
 
 echo "user id is: $USERID"

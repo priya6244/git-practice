@@ -12,9 +12,10 @@ VALIDATE(){
     if [ $1 != 0 ]
     then
         echo -e "$R Not yet installed, Going to install it.. $N"
+        dnf install nginx -y
     else
-        echo -e "$G Installed $N"
-    fi   
+        echo -e "$G Already Installed $N"
+    fi  
 }
 
 if [ $USERID != 0 ]
@@ -26,6 +27,15 @@ fi
 dnf list installed nginx
 
 VALIDATE $?
+
+# if [ $? -ne 0 ]
+# then
+#     echo "nginx is not installed...going to install"
+#     dnf install nginx -y
+#     VALIDATE $?
+# else
+#     echo "MySQL is already installed..nothing to do"
+# fi
 
 # if [ $? != 0 ]
 # then

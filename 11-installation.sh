@@ -39,19 +39,19 @@ fi
 #dnf status $PACKAGE -y
 #dnf enable $PACKAGE -y
 
-dnf list installed httpd
+dnf list installed nginx
 
 if [ $? == 0 ]
 then
     echo "Already Installed"
 else
     echo "Not yet installed, Going to install it.."
-    dnf Install httpd -y
+    dnf Install nginx -y
     if [ $? -eq 0 ]
     then
-        echo "httpd Installation is success"
+        echo "nginx Installation is success"
     else
-        echo "httpd Installation is failure, please check"
+        echo "nginx Installation is failure, please check"
     exit 1
     fi
 fi

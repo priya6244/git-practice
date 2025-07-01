@@ -26,7 +26,7 @@ then
     echo "Already Installed"   # print this if S? == 0, means success -> mysql already installed
 else
     echo "Not yet installed, Going to install it.." # print this if S? != 0, means failure -> mysql not installed yet
-    dnf install mysql -y       # install mysql
+    dnf install mysqll -y       # install mysql
     if [ $? == 0 ]        # $? gives the exit status of the previous command, here it gives the exit status of the dnf install mysql command
     then
         echo "Installation is successful" # print this if $? = 0, means success

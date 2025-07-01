@@ -8,5 +8,5 @@ echo "Please enter ur password : "
 
 read -s PASSWORD #whatever user enters here is invisible to us, becoz we have used -s here.
 
-echo "Username entered is : $USERNAME "
-echo "Password entered is : $PASSWORD "
+echo "Username entered is :: $USERNAME"
+echo "Password entered is :: $PASSWORD"

@@ -5,12 +5,13 @@ USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
+Y="\e[33m"
 
 echo "user id is: $USERID"
 
 if [ $USERID != 0 ]
 then
-    echo "Please run this script with root privileges"
+    echo "$R Please run this script with root privileges $N"
     exit 1
 fi
 

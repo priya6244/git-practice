@@ -36,8 +36,6 @@ else
     fi   
 fi
 
-#dnf status $PACKAGE -y
-#dnf enable $PACKAGE -y
 
 dnf list installed nginx
 

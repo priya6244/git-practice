@@ -12,7 +12,7 @@ VALIDATE(){
     if [ $1 != 0 ]
     then
         echo -e "$R Not yet installed, Going to install it.. $N"
-        dnf install nginx -y
+        dnf install nginxx -y
     else
         echo -e "$G Already Installed $N"
     fi  
@@ -24,7 +24,7 @@ then
     exit 1
 fi
 
-dnf list installed nginx
+dnf list installed nginxx
 
 VALIDATE $?
 

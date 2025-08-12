@@ -1,4 +1,4 @@
-## Shell Scripting
+# Shell Scripting
 
 # Concepts
 * Variables

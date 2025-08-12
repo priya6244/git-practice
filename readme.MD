@@ -14,3 +14,4 @@
 * Logs and Redirectors(using tee command)
 * Deleting old logs
 * Shell script to monitor the Disk usage
+* Shell script to monitor cpuinfo and sending alert mails if it exceeds 70% threshold value
